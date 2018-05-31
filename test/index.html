@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="15/react-15.js"></script>
+    <script src="15/react-dom-15.js"></script>
+    <!-- <script src="15/react-transition-group.js"></script> -->
+    <!-- <script src="15/react-css-transition-group.js"></script> -->
+    <script src="babel.js"></script>
+    <!-- <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script> -->
+    <!-- <script type="text/babel" src="test.jsx"></script> -->
+  </head>
+  <style type="text/css">
+    .active {
+      color: red;
+    }
+  </style>
+  <body>
+    <div id="example"></div>
+  </body>
+  <!-- <script type="text/babel">
+    class Hello extends React.Component{
+
+      constructor(props) {
+        super(props);
+        this.state = {
+          list: [],
+          num: 0
+        }
+      }
+
+      add = () => {
+        this.setState({ num: this.state.num + 1});
+        this.setState({
+          list: this.state.list.concat(this.state.num)
+        });
+      }
+
+      componentDidMount() {
+        window.addEventListener('click', this.add);
+      }
+
+      componentWillUnmount() {
+
+        window.romoveEventListener('click', this.add);
+      }
+
+      render() {
+        const { list } = this.state;
+        let divList = [];
+        list.forEach((item) => {
+          divList.push(
+            <div key={item}>
+              <span  className="item">{item}</span>
+            </div>
+          )
+        })
+
+        return (
+          <div>
+            {this.props.children}
+            <button>add</button>
+            <div>
+              {this.props.name}
+            </div>
+              {divList}
+          </div>
+        );
+      }
+    };
+    console.log(<Hello></Hello>)
+    var temp = function() { return <Hello></Hello>};
+  
+    ReactDOM.render(
+      <div>
+        {temp()}
+      </div>,
+      document.getElementById('example'));
+  </script> -->
+  <script>
+    'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Hello = function (_React$Component) {
+  _inherits(Hello, _React$Component);
+
+  function Hello(props) {
+    _classCallCheck(this, Hello);
+
+    var _this = _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).call(this, props));
+
+    _this.add = function () {
+      _this.setState({ num: _this.state.num + 1 });
+      _this.setState({
+        list: _this.state.list.concat(_this.state.num)
+      });
+    };
+
+    _this.state = {
+      list: [],
+      num: 0
+    };
+    return _this;
+  }
+
+  _createClass(Hello, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.addEventListener('click', this.add);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+
+      window.romoveEventListener('click', this.add);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var list = this.state.list;
+
+      var divList = [];
+      list.forEach(function (item) {
+        divList.push(React.createElement(
+          'div',
+          { key: item },
+          React.createElement(
+            'span',
+            { className: 'item' },
+            item
+          )
+        ));
+      });
+
+      return React.createElement(
+        'div',
+        null,
+        this.props.children,
+        React.createElement(
+          'button',
+          null,
+          'add'
+        ),
+        React.createElement(
+          'div',
+          null,
+          this.props.name
+        ),
+        divList
+      );
+    }
+  }]);
+
+  return Hello;
+}(React.Component);
+
+;
+// console.log(React.createElement(Hello, null));
+var temp = function temp() {
+  return React.createElement(Hello, null);
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  temp()
+), document.getElementById('example'));
+
+  </script>
+</html>

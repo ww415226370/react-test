@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+.progress-ring__circle {
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+}
+</style>
+<body>
+	<svg class="progress-ring" width="120" height="120"> <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/> </svg>
+</body>
+<script type="text/javascript">
+	var circle = document.getElementsByTagName('circle')[0];
+	var circumference = 60 * 2 * Math.PI;
+
+	// circle.style.strokeDasharray = '10 30';
+	circle.style.strokeDasharray = `${circumference} ${circumference}`;
+	circle.style.strokeDashoffset = `${0.9 * circumference}`;
+</script>
+</html>
